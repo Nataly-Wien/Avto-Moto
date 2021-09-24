@@ -1,0 +1,29 @@
+@import "../../../public/sass/mixins.scss";
+@import "../../../public/sass/variables.scss";
+@import "../../../public/sass/common.scss";
+
+.header {
+  padding-top: 15px;
+  padding-bottom: 14px;
+  background-color: $background-grey;
+}
+
+.header__nav {
+  @include font(600, 16px, 22px);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__logo {
+  display: block;
+  padding-left: 9px;
+}
+
+.header__logo-img {
+  display: block;
+}
+
+// .header__menu {
+//   flex-shrink: 2;
+// }

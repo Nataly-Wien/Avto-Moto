@@ -1,0 +1,12 @@
+@import "../../../public/sass/mixins.scss";
+@import "../../../public/sass/variables.scss";
+
+.page {
+  @include reset-indent;
+
+  min-width: $desktop-width;
+  height: 100%;
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: $dark;
+  background-color: $white;
+}
