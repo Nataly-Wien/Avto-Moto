@@ -1,0 +1,40 @@
+@import "../../../public/sass/mixins.scss";
+@import "../../../public/sass/variables.scss";
+
+.features {
+  @include font(400, 16px, 22px);
+  @include list;
+
+  display: flex;
+  color: $dark-transparent;
+}
+
+.features__item {
+  width: 80px;
+  text-align: center;
+
+  &::before {
+    @include pseudo(block, relative, "");
+    width: 40px;
+    height: 40px;
+    right: -22px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &--engine::before {
+    background-image: url('../../../public/img/fuel.svg');
+  }
+
+  &--transmission::before {
+    background-image: url('../../../public/img/transmission.svg');
+  }
+
+  &--power::before {
+    background-image: url('../../../public/img/power.svg');
+  }
+
+  &--volume::before {
+    background-image: url('../../../public/img/volume.svg');
+  }
+}

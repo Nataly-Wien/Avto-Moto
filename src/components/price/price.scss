@@ -1,0 +1,30 @@
+@import "../../../public/sass/mixins.scss";
+@import "../../../public/sass/variables.scss";
+
+.price {
+  display: flex;
+  align-items: baseline;
+  margin-left: 8px;
+}
+
+.price__discount {
+  @include font(700, 35px, 48px);
+}
+
+.price__full {
+  @include font(40, 20px, 28px);
+
+  position: relative;
+  margin-left: 30px;
+  color: $dark-transparent;
+
+  &::before {
+    @include pseudo;
+    width: 120px;
+    height: 1px;
+    top: 12px;
+    left: -2px;
+    rotate: -5deg;
+    background-color: $dark-transparent;
+  }
+}

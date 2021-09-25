@@ -1,0 +1,28 @@
+@import "../../../public/sass/variables.scss";
+@import "../../../public/sass/mixins.scss";
+
+.slider {
+  position: relative;
+}
+
+.slider__img-big {
+  margin-top: 16px;
+  background-color: $dark-transparent;
+}
+
+.slider__mark {
+  @include font(600, 10px, 14px);
+
+  display: inline-block;
+  position: absolute;
+  z-index: 5;
+  top: 16px;
+  width: 122px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: $white;
+  background-color: $wine-red;
+  letter-spacing: 0.07em;
+  text-align: center;
+  text-transform: uppercase;
+}

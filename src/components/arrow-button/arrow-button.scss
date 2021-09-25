@@ -1,0 +1,34 @@
+@import "../../../public/sass/variables.scss";
+
+.arrow {
+  display: block;
+  width: 52px;
+  height: 52px;
+  margin-top: 15px;
+  border: 1px solid $stroke;
+  border-radius: 50%;
+  background-color: $white;
+  cursor: pointer;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: $strike;
+  }
+
+  &--left {
+    rotate: 180deg;
+  }
+
+  &--block {
+    path {
+      stroke: $stroke;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: $stroke;
+    }
+  }
+}

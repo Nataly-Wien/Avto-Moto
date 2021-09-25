@@ -13,11 +13,10 @@
 </head>
 
 <body class="page">
-  <header class="header">
+  <footer class="header">
     <nav class="header__nav container">
-      <a className="header__logo" href="#">
-        <img className="header__logo-img" src="img/logo-avto-moto.png" width="134" height="55"
-          alt="Логотип Avto Moto" />
+      <a class="header__logo" href="#">
+        <img class="header__logo-img" src="img/logo-avto-moto.png" width="134" height="55" alt="Логотип Avto Moto" />
       </a>
       <ul class="header__menu header-menu">
         <li class="header-menu__item">
@@ -31,16 +30,141 @@
           </a>
         </li>
       </ul>
-
     </nav>
-  </header>
+  </footer>
 
   <main class="page-main">
+    <h1 class="visually-hidden">Автомобили</h1>
+    <section class="slider">
+      <h2 class="visually-hidden">Фотографии Марпех 11</h2>
+      <span class="slider__mark">new model</span>
+      <img class="slider__img-big" src="img/desktop_slide_1.jpg" width="600" height="375"
+        alt="Импозантный автомобиль на фоне небоскребов">
+      <div class="slider__controls slider-controls">
+        <button class="slider-controls__arrow slider-controls__arrow--left">
+          <span class="visually-hidden">Предыдущий</span>
+          <svg width="20" height="13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.987 6.172 13.075.369m5.912 5.803L13.3 11.969m5.687-5.797-18.972.18" stroke="#48494D" />
+          </svg>
+        </button>
+        <ul class="slider-controls__pictures pictures">
+          <li class="pictures__item">
+            <img class="pictures__img-small" src="img/desktop_slide_3.jpg" width="128" height="80"
+              alt="Приборная панель - отражение скорости">
+          </li>
+        </ul>
+        <button class="slider-controls__arrow slider-controls__arrow--right">
+          <span class="visually-hidden">Следующий</span>
+          <svg width="20" height="13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.987 6.172 13.075.369m5.912 5.803L13.3 11.969m5.687-5.797-18.972.18" stroke="#48494D" />
+          </svg>
+        </button>
+      </div>
+    </section>
 
+    <section class="card">
+      <h2 class="card__name">Марпех 11</h2>
+      <ul class="card__features card-features">
+        <li class="card-features__item card-features__item--engine "><span class="visually-hidden">Тип двигателя
+          </span>бензин</li>
+      </ul>
+      <div class="card__price price">
+        <p class="price__discount">
+          <span class="visually-hidden">Новая цена </span>
+          2 300 000 <span class="rouble-symb">&#8381;</span>
+        </p>
+        <p class="price__full"><span class="visually-hidden">Старая цена </span>
+          2 400 000 <span class="rouble-symb">&#8381;</span></p>
+      </div>
+      <a class="card__request" href="#">Оставить заявку</a>
+      <a class="card__credit" href="#">В кредит от 11 000 <span class="rouble-symb">&#8381;</span></a>
+    </section>
+
+    <section class="tabs">
+      <ul class="tabs__controls tabs-controls">
+        <li class="tabs-controls__item">
+          <button class="tabs-controls__button">Характеристики</button>
+        </li>
+      </ul>
+
+      <div class="tabs__features tabs-features">
+        <h2 class="visually-hidden">Характеристики</h2>
+        <ul class="tabs-features__list">
+          <li class="tabs-features__item">
+            <p class="tabs-features__feature">Трансмиссия</p>
+            <p class="tabs-features__value">Роботизированная</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tabs__reviews reviews">
+        <h2 class="visually-hidden">Отзывы</h2>
+        <button class="reviews__button">Оставить отзыв</button>
+        <ul>
+          <li class="reviews__item">
+            <div class="reviews__mention mention">
+              <h3 class="mention__name">Борис Иванов</h3>
+              <ul class="mention__properties properties">
+                <li class="properties__item properties__item--plus">
+                  <p class="properties__name">Достоинства</p>
+                  <p class="properties__value">мощность, внешний вид</p>
+                </li>
+                <li class="properties__item properties__item--minus">
+                  <p class="properties__name">Недостатки</p>
+                  <p class="properties__value">Слабые тормозные колодки (пришлось заменить)</p>
+                </li>
+              </ul>
+              <div class="mention__comment comment">
+                <p class="comment__header">Комментарий</p>
+                <!--на мобильной visually-hidden -->
+                <p class="comment__text">Взяли по трейд-ин, на выгодных условиях у дилера. Стильная внешка и крут по
+                  базовым характеристикам. Не думал, что пересяду на китайский автопром, но сейчас гоняю и понимаю, что
+                  полностью доволен.</p>
+              </div>
+              <div class="mention__rating rating">
+                <div class="rating__stars">
+                  <span class="visually-hidden">Рейтинг</span>
+                  <!--добавлять значение -->
+                </div>
+                <p class="rating__note">Советует</p>
+              </div>
+              <div class="mention__wrapper">
+                <p class="mention__time">1 минуту назад</p>
+                <button class="mention__reply">Ответить</button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="tabs__contacts contacts">
+        <h2 class="visually-hidden">Контакты</h2>
+        <ul class="contacts__list">
+          <li class="contacts__item">
+            <p class="contacts__name">Адрес</p>
+            <p class="contacts__value">Санкт-Петербург, набережная реки Карповки, дом 5</p>
+          </li>
+        </ul>
+        <div class="contacts__map"></div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
-
+    <div class="footer__wrapper container">
+      <ul class="footer__menu footer-menu">
+        <li class="footer-menu__item">
+          <a class="footer-menu__link menu-link" href="#">
+            Корпоративным клиентам
+          </a>
+        </li>
+        <li class="footer-menu__item">
+          <a class="footer-menu__link menu-link" href="#">
+            Клиентам
+          </a>
+        </li>
+      </ul>
+    </div>
   </footer>
 </body>
 

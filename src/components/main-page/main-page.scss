@@ -1,12 +1,21 @@
 @import "../../../public/sass/mixins.scss";
 @import "../../../public/sass/variables.scss";
 
-.page {
+.page-main {
   @include reset-indent;
 
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
   min-width: $desktop-width;
-  height: 100%;
+  min-height: 100%;
   font-family: 'Open Sans', Arial, sans-serif;
   color: $dark;
   background-color: $white;
+}
+
+.page-main__wrapper {
+  display: grid;
+  grid-template-columns: 51% 45%;
+  column-gap: 4%;
+  padding-top: 74px;
 }
