@@ -1,6 +1,4 @@
-@import "../../../public/sass/mixins.scss";
 @import "../../../public/sass/variables.scss";
-@import "../../../public/sass/common.scss";
 
 .header {
   padding-top: 15px;
@@ -9,15 +7,13 @@
 }
 
 .header__nav {
-  @include font(600, 16px, 22px);
-
   display: flex;
   justify-content: space-between;
 }
 
 .header__logo {
   display: block;
-  padding-left: 6px;
+  padding-left: 7px;
 }
 
 .header__logo-img {

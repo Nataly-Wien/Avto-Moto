@@ -1,0 +1,32 @@
+@import "../../../public/sass/variables.scss";
+@import "../../../public/sass/mixins.scss";
+
+.tabs-controls {
+  @include list;
+
+  display: flex;
+  justify-content: stretch;
+  width: 50%;
+}
+
+.tabs-controls__item {
+  flex-basis: 33.3%;
+}
+
+.tabs-controls__button {
+  @include font(400, 20px, 27px);
+
+  display: block;
+  width: 100%;
+  padding-top: 11px;
+  padding-bottom: 12px;
+  color: $dark;
+  background-color: $white;
+  border: 1px solid $stroke;
+  letter-spacing: 0.04em;
+
+  &--current {
+    background-color: $wine-red;
+    color: $white;
+  }
+}

@@ -1,0 +1,31 @@
+@import "../../../public/sass/mixins.scss";
+@import "../../../public/sass/variables.scss";
+
+.contacts {
+  display: grid;
+  grid-template-columns: 35% 55%;
+  column-gap: 10%;
+  width: 66%;
+  padding-top: 25px;
+  margin-bottom: 85px;
+}
+.contacts__list {
+  @include list;
+}
+
+.contacts__name {
+  @include reset-indent;
+  @include font(700, 16px, 22px);
+
+  color: $contacts-dark;
+}
+
+.contacts__value {
+  @include reset-indent;
+  @include font(600, 14px, 19px);
+
+  padding-top: 10px;
+  margin-bottom: 23px;
+  color: $black;
+  white-space: pre-wrap;
+}

@@ -1,0 +1,32 @@
+@import "../../../public/sass/mixins.scss";
+@import "../../../public/sass/variables.scss";
+
+.tabs-features {
+  width: 50%
+}
+
+.tabs-features__list {
+  @include list;
+
+  margin: 30px 20px 140px 0;
+}
+
+.tabs-features__item {
+  @include font(400, 16px, 22px);
+
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 6px;
+  margin-bottom: 21px;
+  border-bottom: 1px solid $stroke;
+}
+
+.tabs-features__feature {
+  @include reset-indent;
+}
+
+.tabs-features__value {
+  @include reset-indent;
+
+  color: $black;
+}

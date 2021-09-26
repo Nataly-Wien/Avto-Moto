@@ -1,19 +1,25 @@
-// import './properties.scss';
+import './properties.scss';
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Properties = () => {
+const Properties = ({plus, minus}) => {
   return (
     <ul className="mention__properties properties">
       <li className="properties__item properties__item--plus">
-        <p className="properties__name">Достоинства</p>
-        <p className="properties__value">мощность, внешний вид</p>
+        <p className="properties__name properties__name--plus">Достоинства</p>
+        <p className="properties__value">{plus}</p>
       </li>
       <li className="properties__item properties__item--minus">
-        <p className="properties__name">Недостатки</p>
-        <p className="properties__value">Слабые тормозные колодки (пришлось заменить)</p>
+        <p className="properties__name properties__name--minus">Недостатки</p>
+        <p className="properties__value">{minus}</p>
       </li>
     </ul>
   );
+};
+
+Properties.propTypes = {
+  plus: PropTypes.string,
+  minus: PropTypes.string,
 };
 
 export default Properties;

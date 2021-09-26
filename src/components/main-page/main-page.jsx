@@ -17,7 +17,7 @@ const MainPage = () => {
           <h1 className="visually-hidden">Автомобили</h1>
           <Slider photos={CARD.photos.slice(0, SLIDER_LENGTH)} />
           <Card card={CARD} />
-          <Tabs />
+          <Tabs card={CARD} />
         </div>
       </main>
       <Footer />

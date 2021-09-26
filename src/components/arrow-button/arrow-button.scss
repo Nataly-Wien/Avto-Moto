@@ -21,6 +21,9 @@
   }
 
   &--block {
+      cursor: default;
+      pointer-events: none;
+
     path {
       stroke: $stroke;
     }

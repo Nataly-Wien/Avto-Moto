@@ -1,5 +1,4 @@
 @import "../../../public/sass/mixins.scss";
-@import "../../../public/sass/variables.scss";
 
 .card__name {
   @include reset-indent;
@@ -17,23 +16,6 @@
 }
 
 .card__button {
-  @include font(600, 14px, 19px);
-
-  display: inline-block;
   margin-left: 4px;
   margin-bottom: 16px;
-  padding: 16px 20px;
-  text-transform: uppercase;
-  letter-spacing: 1.7px;
-
-  &--request {
-    background-color: $wine-red;
-    color: $white;
-  }
-
-  &--credit {
-    background-color: $white;
-    color: $wine-red;
-    border: 1px solid $wine-red;
-  }
 }

@@ -19,3 +19,8 @@
   column-gap: 4%;
   padding-top: 74px;
 }
+
+.page-main__tabs {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}

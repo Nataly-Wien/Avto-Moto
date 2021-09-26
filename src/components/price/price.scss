@@ -4,14 +4,18 @@
 .price {
   display: flex;
   align-items: baseline;
+  padding-top: 35px;
   margin-left: 8px;
+  margin-bottom: 40px;
 }
 
 .price__discount {
+  @include reset-indent;
   @include font(700, 35px, 48px);
 }
 
 .price__full {
+  @include reset-indent;
   @include font(40, 20px, 28px);
 
   position: relative;
@@ -25,6 +29,6 @@
     top: 12px;
     left: -2px;
     rotate: -5deg;
-    background-color: $dark-transparent;
+    background-color: $strike;
   }
 }

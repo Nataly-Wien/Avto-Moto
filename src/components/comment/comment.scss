@@ -1,0 +1,13 @@
+@import "../../../public/sass/mixins.scss";
+
+.comment__header {
+  @include reset-indent;
+  @include font(600,15px,20px);
+  padding-top: 13px;
+}
+
+.comment__text {
+  @include reset-indent;
+  @include font(400,15px,21px);
+  padding-top: 2px;
+}

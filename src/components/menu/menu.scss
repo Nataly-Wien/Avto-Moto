@@ -1,17 +1,29 @@
 @import "../../../public/sass/mixins.scss";
 @import "../../../public/sass/variables.scss";
 
-.header-menu {
+.menu {
   @include list;
 
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
+
+  &--header {
+    .menu__item {
+      margin-right: 58px;
+    }
+  }
+
+  &--footer {
+    justify-content: space-between;
+    padding-left: 4px;
+  }
 }
 
-.header-menu__item {
+.menu__item {
+  @include font(600, 16px, 22px);
+
   margin: 0;
-  margin-right: 58px;
   padding: 0;
 
   &:last-child {
@@ -19,7 +31,7 @@
   }
 }
 
-.header-menu__link {
+.menu__link {
   display: block;
   padding: 15px 5px;
   color: $dark;

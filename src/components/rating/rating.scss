@@ -1,0 +1,25 @@
+@import "../../../public/sass/mixins.scss";
+@import "../../../public/sass/variables.scss";
+
+.rating {
+  padding-top: 20px;
+  display: flex;
+}
+
+.rating__stars-list {
+  @include list;
+
+  display:  flex;
+  margin-right: 25px;
+}
+
+.rating__stars-item {
+  margin-right: 5px;
+}
+
+.rating__note {
+  @include reset-indent;
+  @include font(400, 15px, 21px);
+
+  color: $wine-red;
+}

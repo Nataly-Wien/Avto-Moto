@@ -1,0 +1,20 @@
+@import "../../../public/sass/mixins.scss";
+
+.reviews {
+  position: relative;
+  padding-top: 28px;
+}
+
+.reviews__button {
+  position: absolute;
+  right: 10px;
+  padding: 16px 17px;
+}
+
+.reviews__list {
+  @include list;
+}
+
+.reviews__item {
+  @include reset-indent;
+}

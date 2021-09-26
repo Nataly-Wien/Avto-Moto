@@ -1,0 +1,32 @@
+@import "../../../public/sass/mixins.scss";
+@import "../../../public/sass/variables.scss";
+
+.mention__name {
+  @include reset-indent;
+  @include font(600, 20px, 27px);
+  width: 75%;
+}
+
+.mention__wrapper {
+  padding-top: 10px;
+  margin-bottom: 24px;
+}
+
+.mention__time {
+  @include font(400,14px, 19px);
+
+  margin-right: 5px;
+  color: $text-transparent;
+}
+
+.mention__reply {
+  @include font(400, 16px, 22px);
+
+  font-family: inherit;
+  display: inline-block;
+  padding: 16px 20px;
+  border: none;
+  color: $wine-red;
+  background-color: $white;
+  text-align: center;
+}

@@ -1,6 +1,7 @@
 import './header.scss';
 import React from 'react';
-import HeaderMenu from '../header-menu/header-menu';
+import Menu from '../menu/menu';
+import {MAIN_MENU_ITEMS} from '../../const';
 
 const Header = () => {
   return (
@@ -9,7 +10,7 @@ const Header = () => {
         <a className="header__logo" href="#">
           <img className="header__logo-img" src="img/logo-avto-moto.png" width="134" height="55" alt="Логотип Avto Moto" />
         </a>
-        <HeaderMenu />
+        <Menu menu={MAIN_MENU_ITEMS} type={`header`} />
       </nav>
     </header >
   );

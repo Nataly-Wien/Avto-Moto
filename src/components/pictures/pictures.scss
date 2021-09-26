@@ -1,4 +1,5 @@
 @import "../../../public/sass/mixins.scss";
+@import "../../../public/sass/variables.scss";
 
 .pictures {
   @include list;
@@ -17,4 +18,10 @@
 
 .pictures__img-small {
   display: block;
+  background-color: $dark;
+
+  &--active {
+    outline: 1px solid $strike;
+    outline-offset: 2px;
+  }
 }
