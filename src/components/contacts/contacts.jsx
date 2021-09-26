@@ -1,5 +1,6 @@
 import './contacts.scss';
 import React from 'react';
+import Map from '../mapBlock/mapBlock';
 import {CONTACTS} from '../../const';
 
 const Contacts = () => {
@@ -14,11 +15,12 @@ const Contacts = () => {
             </li>);
         })}
       </ul>
-      <div className="contacts__wrapper">
+      {/* <div className="contacts__wrapper">
         <img className="contacts__map-img" src="img/map.jpg" width="431" height="271"
           alt="Санкт-Петербург, набережная реки Карповки, дом 5" />
         <div className="contacts__map-container" id="map"></div>
-      </div>
+      </div> */}
+      <Map />
     </div>
   );
 };
