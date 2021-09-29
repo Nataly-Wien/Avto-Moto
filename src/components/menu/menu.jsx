@@ -17,8 +17,8 @@ const Menu = ({menu, type}) => {
 };
 
 Menu.propTypes = {
-  menu: PropTypes.arrayOf(PropTypes.string),
-  type: PropTypes.string,
+  menu: PropTypes.arrayOf(PropTypes.string).isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 export default Menu;

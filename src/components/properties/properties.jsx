@@ -18,8 +18,8 @@ const Properties = ({plus, minus}) => {
 };
 
 Properties.propTypes = {
-  plus: PropTypes.string,
-  minus: PropTypes.string,
+  plus: PropTypes.string.isRequired,
+  minus: PropTypes.string.isRequired,
 };
 
 export default Properties;

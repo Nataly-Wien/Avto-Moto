@@ -18,8 +18,8 @@ Pictures.propTypes = {
   photos: PropTypes.arrayOf(PropTypes.shape({
     picture: PropTypes.string,
     description: PropTypes.string,
-  })),
-  currentSlide: PropTypes.number,
+  })).isRequired,
+  currentSlide: PropTypes.number.isRequired,
 };
 
 export default Pictures;

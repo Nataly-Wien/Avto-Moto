@@ -16,8 +16,8 @@ const Price = ({discount, full}) => {
 };
 
 Price.propTypes = {
-  discount: PropTypes.string,
-  full: PropTypes.string,
+  discount: PropTypes.string.isRequired,
+  full: PropTypes.string.isRequired,
 };
 
 export default Price;

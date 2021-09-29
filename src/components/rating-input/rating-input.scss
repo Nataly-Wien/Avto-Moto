@@ -1,0 +1,27 @@
+@import "../../../public/sass/variables.scss";
+
+.rating-input {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.rating-input__label {
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+  cursor: pointer;
+
+  &:first-child {
+    margin-right: 0;
+  }
+}
+
+.rating-input__label:hover path,
+.rating-input__label:hover ~.rating-input__label path,
+.rating-input__input:focus ~.rating-input__label path,
+.rating-input__input:checked ~.rating-input__label path {
+  fill: $wine-red;
+  fill-opacity: 1;
+}

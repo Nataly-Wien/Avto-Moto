@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import {cardType} from '../../types-validation';
 import {CURRENT_TAB} from '../../const';
 
-const Tabs = ({card}) => {
+const Tabs = ({card, onNewCommentButtonClick}) => {
   const [currentTab, setCurrentTab] = useState(CURRENT_TAB);
 
   const onTabClick = (id) => setCurrentTab(id);
@@ -17,7 +17,7 @@ const Tabs = ({card}) => {
     <section className="page-main__tabs tabs">
       <TabsControls currentTab={currentTab} onTabClick={onTabClick}>
         <TabsFeatures features={card.fullFeatures} />
-        <Reviews reviews={card.reviews} />
+        <Reviews reviews={card.reviews} onNewCommentButtonClick={onNewCommentButtonClick} />
         <Contacts />
       </TabsControls>
     </section>
@@ -25,7 +25,8 @@ const Tabs = ({card}) => {
 };
 
 Tabs.propTypes = {
-  card: PropTypes.arrayOf(cardType),
+  card: cardType,
+  onNewCommentButtonClick: PropTypes.func.isRequired,
 };
 
 export default Tabs;

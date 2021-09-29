@@ -7,6 +7,8 @@
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.12em;
+  border: none;
+  outline: none;
 
   &--red {
     background-color: $wine-red;

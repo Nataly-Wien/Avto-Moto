@@ -26,7 +26,7 @@ Slider.propTypes = {
   photos: PropTypes.arrayOf(PropTypes.shape({
     picture: PropTypes.string,
     description: PropTypes.string,
-  })),
+  })).isRequired,
 };
 
 export default Slider;

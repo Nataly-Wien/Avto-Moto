@@ -2,7 +2,6 @@ import './card.scss';
 import React from 'react';
 import Features from '../features/features';
 import Price from '../price/price';
-import PropTypes from 'prop-types';
 import {FEATURES} from '../../const';
 import {cardType} from '../../types-validation';
 
@@ -21,7 +20,7 @@ const Card = ({card}) => {
 };
 
 Card.propTypes = {
-  card: PropTypes.arrayOf(cardType),
+  card: cardType,
 };
 
 export default Card;

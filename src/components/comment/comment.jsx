@@ -6,14 +6,13 @@ const Comment = ({comment}) => {
   return (
     <div className="mention__comment comment">
       <p className="comment__header">Комментарий</p>
-      {/* <!--на мобильной visually-hidden --> */}
       <p className="comment__text">{comment}</p>
     </div>
   );
 };
 
 Comment.propTypes = {
-  comment: PropTypes.string,
+  comment: PropTypes.string.isRequired,
 };
 
 export default Comment;

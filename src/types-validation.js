@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types';
 
-const reviewType = PropTypes.arrayOf(PropTypes.shape({
+const reviewType = PropTypes.shape({
   name: PropTypes.string,
   plus: PropTypes.string,
   minus: PropTypes.string,
   comment: PropTypes.string,
-  rating: PropTypes.number,
-  advice: PropTypes.string,
-  time: PropTypes.string,
-}));
+  rating: PropTypes.string,
+  dateTime: PropTypes.string,
+}).isRequired;
 
 const cardType = PropTypes.shape({
   name: PropTypes.string,
@@ -19,12 +18,12 @@ const cardType = PropTypes.shape({
   photos: PropTypes.arrayOf(PropTypes.shape({
     picture: PropTypes.string,
     description: PropTypes.string,
-  })),
+  })).isRequired,
   fullFeatures: PropTypes.arrayOf(PropTypes.shape({
     feature: PropTypes.string,
     description: PropTypes.string,
-  })),
-  reviews: reviewType,
+  })).isRequired,
+  reviews: PropTypes.arrayOf(reviewType).isRequired,
 });
 
 export {cardType, reviewType};

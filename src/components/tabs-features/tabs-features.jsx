@@ -1,4 +1,4 @@
-import './tab-features.scss';
+import './tabs-features.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -23,7 +23,7 @@ TabFeatures.propTypes = {
   features: PropTypes.arrayOf(PropTypes.shape({
     feature: PropTypes.string,
     description: PropTypes.string,
-  })),
+  })).isRequired,
 };
 
 export default TabFeatures;

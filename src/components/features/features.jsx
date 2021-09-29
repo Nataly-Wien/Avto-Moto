@@ -18,11 +18,11 @@ const Features = ({features, featureNames}) => {
 };
 
 Features.propTypes = {
-  features: PropTypes.arrayOf(PropTypes.string),
+  features: PropTypes.arrayOf(PropTypes.string).isRequired,
   featureNames: PropTypes.arrayOf(PropTypes.shape({
     feature: PropTypes.string,
     legend: PropTypes.string,
-  })),
+  })).isRequired,
 };
 
 export default Features;

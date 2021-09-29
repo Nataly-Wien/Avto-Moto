@@ -24,9 +24,11 @@
   background-color: $white;
   border: 1px solid $stroke;
   letter-spacing: 0.04em;
+  cursor: pointer;
 
   &--current {
     background-color: $wine-red;
     color: $white;
+    cursor: default;
   }
 }

@@ -12,7 +12,8 @@ const TabControls = ({currentTab, onTabClick, children}) => {
         {TABS.map((item, i) => {
           return (
             <li className="tabs-controls__item" key={`${item}-${i}`}>
-              <button className={`tabs-controls__button${i === currentTab ? ` tabs-controls__button--current` : ``}`} onClick={() => onTabClick(i)}>
+              <button className={`tabs-controls__button${i === currentTab ? ` tabs-controls__button--current`
+                : ``}`} type="button" onClick={() => onTabClick(i)}>
                 {item}
               </button>
             </li>);
@@ -24,9 +25,9 @@ const TabControls = ({currentTab, onTabClick, children}) => {
 };
 
 TabControls.propTypes = {
-  currentTab: PropTypes.number,
-  onTabClick: PropTypes.func,
-  children: PropTypes.element,
+  currentTab: PropTypes.number.isRequired,
+  onTabClick: PropTypes.func.isRequired,
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
 };
 
 export default TabControls;

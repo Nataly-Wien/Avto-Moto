@@ -17,10 +17,10 @@ const ArrowButton = ({currentSlide, direction, legend, onButtonClick}) => {
 };
 
 ArrowButton.propTypes = {
-  currentSlide: PropTypes.number,
-  direction: PropTypes.string,
-  legend: PropTypes.string,
-  onButtonClick: PropTypes.func,
+  currentSlide: PropTypes.number.isRequired,
+  direction: PropTypes.string.isRequired,
+  legend: PropTypes.string.isRequired,
+  onButtonClick: PropTypes.func.isRequired,
 };
 
 export default ArrowButton;

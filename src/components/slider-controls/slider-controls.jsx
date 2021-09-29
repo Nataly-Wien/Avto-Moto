@@ -18,10 +18,10 @@ SliderControls.propTypes = {
   photos: PropTypes.arrayOf(PropTypes.shape({
     picture: PropTypes.string,
     description: PropTypes.string,
-  })),
-  currentSlide: PropTypes.number,
-  onPrevButtonClick: PropTypes.func,
-  onNextButtonClick: PropTypes.func,
+  })).isRequired,
+  currentSlide: PropTypes.number.isRequired,
+  onPrevButtonClick: PropTypes.func.isRequired,
+  onNextButtonClick: PropTypes.func.isRequired,
 };
 
 export default SliderControls;

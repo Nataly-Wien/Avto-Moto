@@ -11,6 +11,13 @@
 }
 .contacts__list {
   @include list;
+
+  a {
+    &:hover,
+    &:active {
+      color: $dark;
+    }
+  }
 }
 
 .contacts__name {
@@ -24,6 +31,7 @@
   @include reset-indent;
   @include font(600, 14px, 19px);
 
+  display: block;
   padding-top: 10px;
   margin-bottom: 23px;
   color: $black;
