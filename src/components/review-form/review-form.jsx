@@ -12,7 +12,7 @@ const EMPTY_INPUTS = {
   comment: ``,
 };
 
-const ReviewForm = ({onSendButtonClick}) => {
+const ReviewForm = ({isShow, onSendButtonClick}) => {
 
   const getFromLocalStorage = () => {
     let data = {};
@@ -22,6 +22,12 @@ const ReviewForm = ({onSendButtonClick}) => {
     });
 
     return data;
+  };
+
+  const saveToLocalStorage = (data) => {
+    Object.keys(data).map((item) => {
+      localStorage.setItem(item, data[item]);
+    });
   };
 
   const [inputs, setInputs] = useState(getFromLocalStorage());
@@ -39,24 +45,21 @@ const ReviewForm = ({onSendButtonClick}) => {
 
   const onFieldChange = (evt, fieldName) => setInputs(getNewInputValues(fieldName, evt.target.value));
 
-  const saveToLocalStorage = (data) => {
-    Object.keys(data).map((item) => {
-      localStorage.setItem(item, data[item]);
-    });
-  };
   useEffect(() => {
+    setInputs(getFromLocalStorage());
+
     if (isExitWithSaving) {
       saveToLocalStorage(inputs);
     }
 
-  }, [isExitWithSaving]);
+  }, [isExitWithSaving, isShow]);
 
   return (
     <form className="review__form review-form" method="post" name="review">
       <div className="review-form__wrapper">
         <div>
           <p className="review-form__input-wrapper review-form__input-wrapper--asterisk review-form__input-wrapper--name">
-            <label className="review-form_label review-form_label--name" htmlFor="name-field">
+            <label className="review-form__label review-form__label--name" htmlFor="name-field">
               Пожалуйста, заполните поле
               <span className="visually-hidden">введите свое имя</span>
             </label>
@@ -91,6 +94,7 @@ const ReviewForm = ({onSendButtonClick}) => {
 };
 
 ReviewForm.propTypes = {
+  isShow: PropTypes.bool.isRequired,
   onSendButtonClick: PropTypes.func.isRequired,
 };
 

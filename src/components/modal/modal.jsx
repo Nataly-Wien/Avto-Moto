@@ -32,7 +32,7 @@ const Modal = ({isShow, onClose, children}) => {
 
   return (
     <section className={`modal overlay${isShow ? ` show` : ``}`}>
-      {children}
+      {children(isShow)}
     </section>
   );
 };
