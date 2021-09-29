@@ -23,18 +23,18 @@
   }
 
   &--engine::before {
-    background-image: url('../../../public/img/fuel.svg');
+    background-image: url('../../img/fuel.svg');
   }
 
   &--transmission::before {
-    background-image: url('../../../public/img/transmission.svg');
+    background-image: url('../../img/transmission.svg');
   }
 
   &--power::before {
-    background-image: url('../../../public/img/power.svg');
+    background-image: url('../../img/power.svg');
   }
 
   &--volume::before {
-    background-image: url('../../../public/img/volume.svg');
+    background-image: url('../../img/volume.svg');
   }
 }
