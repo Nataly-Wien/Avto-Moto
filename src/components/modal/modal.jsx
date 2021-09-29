@@ -40,7 +40,7 @@ const Modal = ({isShow, onClose, children}) => {
 Modal.propTypes = {
   isShow: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.func.isRequired,
 };
 
 export default Modal;
