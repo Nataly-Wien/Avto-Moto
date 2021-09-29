@@ -1,32 +1,55 @@
 import './review-form.scss';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import dayjs from 'dayjs';
 import RatingInput from '../rating-input/rating-input';
 import PropTypes from 'prop-types';
 
+const EMPTY_INPUTS = {
+  name: ``,
+  plus: ``,
+  minus: ``,
+  rating: `0`,
+  comment: ``,
+};
+
 const ReviewForm = ({onSendButtonClick}) => {
-  const [inputs, setInputs] = useState({
-    name: ``,
-    plus: ``,
-    minus: ``,
-    rating: `0`,
-    comment: ``,
-  });
 
-  const getNewInputs = (name, value) => {
-    const obj = {
-      ...inputs,
-    };
+  const getFromLocalStorage = () => {
+    let data = {};
+    Object.keys(EMPTY_INPUTS).map((item) => {
+      const field = localStorage.getItem(item) || EMPTY_INPUTS[item];
+      data = {...data, [item]: field};
+    });
 
-    obj[name] = value;
-
-    return {
-      ...inputs,
-      ...obj
-    };
+    return data;
   };
 
-  const onFieldChange = (evt, fieldName) => setInputs(getNewInputs(fieldName, evt.target.value));
+  const [inputs, setInputs] = useState(getFromLocalStorage());
+  const [isExitWithSaving, setIsExitWithSaving] = useState(false);
+
+  const getNewInputValues = (name, value) => {
+    const newState = {
+      ...inputs,
+    };
+
+    newState[name] = value;
+
+    return newState;
+  };
+
+  const onFieldChange = (evt, fieldName) => setInputs(getNewInputValues(fieldName, evt.target.value));
+
+  const saveToLocalStorage = (data) => {
+    Object.keys(data).map((item) => {
+      localStorage.setItem(item, data[item]);
+    });
+  };
+  useEffect(() => {
+    if (isExitWithSaving) {
+      saveToLocalStorage(inputs);
+    }
+
+  }, [isExitWithSaving]);
 
   return (
     <form className="review__form review-form" method="post" name="review">
@@ -59,7 +82,10 @@ const ReviewForm = ({onSendButtonClick}) => {
           </p>
         </div>
       </div>
-      <button className="button button--red" type="button" onClick={() => onSendButtonClick({...inputs, dateTime: dayjs().toISOString()})}>Оставить отзыв</button>
+      <button className="button button--red" type="button" onClick={() => {
+        setIsExitWithSaving(true);
+        onSendButtonClick({...inputs, dateTime: dayjs().toISOString()});
+      }}>Оставить отзыв</button>
     </form>
   );
 };

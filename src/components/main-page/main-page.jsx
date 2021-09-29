@@ -14,12 +14,6 @@ const MainPage = () => {
   const [pageData, setPageData] = useState(CARD);
   const [isModalShow, setIsModalShow] = useState(false);
 
-  const saveLocal = (data) => {
-    Object.keys(data).map((item) => {
-      localStorage.setItem(item, data[item]);
-    });
-  };
-
   const onModalShowChange = (isShow) => {
     document.body.style.overflow = isShow ? `hidden` : `auto`;
     setIsModalShow(isShow);
@@ -31,7 +25,6 @@ const MainPage = () => {
       reviews: [...pageData.reviews.slice(), comment],
     });
     onModalShowChange(false);
-    saveLocal(comment);
   };
 
   return (
