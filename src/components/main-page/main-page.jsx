@@ -40,20 +40,6 @@ const MainPage = () => {
       </main>
       <Footer />
 
-      {/* const App = () => {
-  return (
-      <Parent>
-        {props => (
-          <ChildComponent {...props}>
-            Bla-bla-bla
-          </ChildComponent>
-        )}
-      </Parent>
-      )
-} */}
-      {/* <Modal isShow={isModalShow} onClose={onModalShowChange}>
-        <ReviewWindow onSendButtonClick={addComment} onCloseClick={onModalShowChange} />
-      </Modal> */}
       <Modal isShow={isModalShow} onClose={onModalShowChange}>
         {(isShow) => (
           <ReviewWindow onSendButtonClick={addComment} onCloseClick={onModalShowChange} isShow={isShow} />

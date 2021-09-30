@@ -51,7 +51,7 @@ const ReviewForm = ({isShow, onSendButtonClick}) => {
     onSendButtonClick({...inputs, dateTime: dayjs().toISOString()});
   };
 
-  const nameInput = useRef(null);
+  const nameInput = useRef();
 
   useEffect(() => {
     setInputs(getFromLocalStorage());
@@ -75,7 +75,7 @@ const ReviewForm = ({isShow, onSendButtonClick}) => {
               Пожалуйста, заполните поле
               <span className="visually-hidden">введите свое имя</span>
             </label>
-            <input className="review-form__control review-form__control--input" ref={nameInput} type="text" name="username" id="name-field" value={inputs.name} placeholder="Имя" onChange={(evt) => onFieldChange(evt, `name`)} autoFocus="autoFocus" required={true} />
+            <input className="review-form__control review-form__control--input" ref={nameInput} type="text" name="username" id="name-field" value={inputs.name} placeholder="Имя" onChange={(evt) => onFieldChange(evt, `name`)} required={true} />
           </p>
           <p className="review-form__input-wrapper">
             <label className="visually-hidden" htmlFor="plus-field">Достоинства модели</label>

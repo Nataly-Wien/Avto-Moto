@@ -17,10 +17,8 @@ const Modal = ({isShow, onClose, children}) => {
   const onPopupOutClick = (isClick) => onClose(!isClick);
 
   const onKeydown = (evt) => {
-    switch (evt.key) {
-      case `Escape`:
-        onEscDown(true);
-        break;
+    if (evt.key === `Escape`) {
+      onEscDown(true);
     }
   };
 
