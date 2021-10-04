@@ -1,32 +1,34 @@
 import './slider.scss';
 import React, {useState} from "react";
 import SliderControls from '../slider-controls/slider-controls';
-import PropTypes from 'prop-types';
 import {CURRENT_SLIDE} from '../../const';
 
-const Slider = ({photos}) => {
+const Slider = () => {
   const [currentPhoto, setCurrentPhoto] = useState(CURRENT_SLIDE);
 
-  const onPrevButtonClick = () => setCurrentPhoto(currentPhoto - 1);
-  const onNextButtonClick = () => setCurrentPhoto(currentPhoto + 1);
+  const handlePrevButtonClick = () => setCurrentPhoto(currentPhoto - 1);
+  const handleNextButtonClick = () => setCurrentPhoto(currentPhoto + 1);
+
+  const loadImg = (requireImg) =>
+    requireImg.keys().reduce((pictures, item, i) => {
+      pictures[i] = requireImg(item);
+      return pictures;
+    }, []);
+
+  const photos = loadImg(
+    require.context('./../../img/', false, /slide_\d{1,3}\.jpg$/)
+  );
 
   return (
     <section className="page-main__slider slider">
       <h2 className="visually-hidden">Фотографии Марпех 11</h2>
       <span className="slider__mark">new model</span>
-      <img className="slider__img-big" src={`${photos[currentPhoto].picture}`} width="600" height="375"
-        alt={`${photos[currentPhoto].description}`} />
+      <img className="slider__img-big" src={photos[currentPhoto].default} width="600" height="375"
+        alt={`Фото ${currentPhoto}`} />
       <SliderControls photos={photos} currentSlide={currentPhoto}
-        onPrevButtonClick={onPrevButtonClick} onNextButtonClick={onNextButtonClick} />
+        onPrevButtonClick={handlePrevButtonClick} onNextButtonClick={handleNextButtonClick} />
     </section>
   );
-};
-
-Slider.propTypes = {
-  photos: PropTypes.arrayOf(PropTypes.shape({
-    picture: PropTypes.string,
-    description: PropTypes.string,
-  })).isRequired,
 };
 
 export default Slider;

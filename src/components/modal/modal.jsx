@@ -4,27 +4,31 @@ import PropTypes from 'prop-types';
 
 const Modal = ({isShow, onClose, children}) => {
   useEffect(() => {
-    document.addEventListener(`keydown`, onKeydown);
-    document.addEventListener(`mousedown`, onMouseDown);
+    document.addEventListener(`keydown`, handleKeydown);
+    document.addEventListener(`mousedown`, handleMouseDown);
 
     return () => {
-      document.removeEventListener(`keydown`, onKeydown);
-      document.removeEventListener(`mousedown`, onMouseDown);
+      document.removeEventListener(`keydown`, handleKeydown);
+      document.removeEventListener(`mousedown`, handleMouseDown);
     };
   });
 
-  const onEscDown = (isDown) => onClose(!isDown);
-  const onPopupOutClick = (isClick) => onClose(!isClick);
+  const handleEscDown = (isDown) => onClose(!isDown);
+  const handlePopupOutClick = (isClick) => onClose(!isClick);
 
-  const onKeydown = (evt) => {
+  const handleKeydown = (evt) => {
     if (evt.key === `Escape`) {
-      onEscDown(true);
+      handleEscDown(true);
+    } else if (evt.key === 'Tab' && !evt.shiftKey && evt.target.closest(`.review__close-btn`)) {
+      evt.preventDefault();
+    } else if (evt.key === 'Tab' && evt.shiftKey && evt.target.closest(`.review-form__control--input-name`)) {
+      evt.preventDefault();
     }
   };
 
-  const onMouseDown = (evt) => {
+  const handleMouseDown = (evt) => {
     if (!evt.target.closest(`.review`)) {
-      onPopupOutClick(true);
+      handlePopupOutClick(true);
     }
   };
 

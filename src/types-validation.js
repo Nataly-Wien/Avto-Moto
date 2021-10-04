@@ -15,10 +15,6 @@ const cardType = PropTypes.shape({
   priceDiscount: PropTypes.string,
   priceFull: PropTypes.string,
   credit: PropTypes.string,
-  photos: PropTypes.arrayOf(PropTypes.shape({
-    picture: PropTypes.string,
-    description: PropTypes.string,
-  })).isRequired,
   fullFeatures: PropTypes.arrayOf(PropTypes.shape({
     feature: PropTypes.string,
     description: PropTypes.string,

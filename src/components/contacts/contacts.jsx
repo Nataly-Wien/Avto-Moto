@@ -1,6 +1,6 @@
 import './contacts.scss';
 import React from 'react';
-import Map from '../mapBlock/mapBlock';
+import MapBlock from '../map-block/map-block';
 import {CONTACTS} from '../../const';
 
 const checkLink = (contact) => {
@@ -29,7 +29,7 @@ const Contacts = () => {
             </li>);
         })}
       </ul>
-      <Map />
+      <MapBlock />
     </div>
   );
 };

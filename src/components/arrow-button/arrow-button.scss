@@ -1,4 +1,4 @@
-@import "../../../public/sass/variables.scss";
+@import "../../sass/variables.scss";
 
 .arrow {
   display: block;
@@ -17,7 +17,7 @@
   }
 
   &--left {
-    rotate: 180deg;
+    transform: rotate(180deg);
   }
 
   &--block {

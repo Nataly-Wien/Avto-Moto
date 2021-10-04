@@ -31,20 +31,6 @@ export const CARD = {
   priceDiscount: `2 300 000`,
   priceFull: `2 400 000`,
   credit: `11 000`,
-  photos: [
-    {
-      picture: `img/desktop_slide_1.jpg`,
-      description: `Импозантный автомобиль на фоне небоскребов`,
-    },
-    {
-      picture: `img/desktop_slide_2.jpg`,
-      description: `Шикарный салон и стильная торпеда`,
-    },
-    {
-      picture: `img/desktop_slide_3.jpg`,
-      description: `Приборная панель - отражение скорости`,
-    },
-  ],
   fullFeatures: [
     {
       feature: `Трансмиссия`,

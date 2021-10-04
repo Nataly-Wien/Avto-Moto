@@ -1,8 +1,8 @@
-import './mapBlock.scss';
+import './map-block.scss';
 import React from "react";
 import {YMaps, Map, Placemark} from 'react-yandex-maps';
 
-const mapBlock = () => {
+const MapBlock = () => {
   const mapData = {
     center: [59.968137, 30.32515],
     zoom: 14,
@@ -25,4 +25,4 @@ const mapBlock = () => {
   );
 };
 
-export default mapBlock;
+export default MapBlock;

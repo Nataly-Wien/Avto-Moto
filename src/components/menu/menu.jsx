@@ -7,7 +7,7 @@ const Menu = ({menu, type}) => {
     <ul className={`menu menu--${type}`}>
       {menu.map((item, i) => {
         return (
-          <li className="menu__item" key={`${item}-${i}`}>
+          <li className={`menu__item menu__item menu__item--${type}`} key={`${item}-${type}-${i}`}>
             <a className="menu__link" href="#">{item}</a>
           </li>
         );

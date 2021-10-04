@@ -1,5 +1,5 @@
-@import "../../../public/sass/mixins.scss";
-@import "../../../public/sass/variables.scss";
+@import "../../sass/mixins.scss";
+@import "../../sass/variables.scss";
 
 .mention__name {
   @include reset-indent;
@@ -15,7 +15,7 @@
 .mention__time {
   @include font(400,14px, 19px);
 
-  margin-right: 5px;
+  margin-right: 13px;
   color: $text-transparent;
 }
 

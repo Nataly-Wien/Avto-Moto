@@ -11,11 +11,11 @@ import {CURRENT_TAB} from '../../const';
 const Tabs = ({card, onNewCommentButtonClick}) => {
   const [currentTab, setCurrentTab] = useState(CURRENT_TAB);
 
-  const onTabClick = (id) => setCurrentTab(id);
+  const handleTabClick = (id) => setCurrentTab(id);
 
   return (
     <section className="page-main__tabs tabs">
-      <TabsControls currentTab={currentTab} onTabClick={onTabClick}>
+      <TabsControls currentTab={currentTab} onTabClick={handleTabClick}>
         <TabsFeatures features={card.fullFeatures} />
         <Reviews reviews={card.reviews} onNewCommentButtonClick={onNewCommentButtonClick} />
         <Contacts />

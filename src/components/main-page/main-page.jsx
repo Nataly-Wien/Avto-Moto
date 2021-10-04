@@ -8,23 +8,23 @@ import Footer from '../footer/footer';
 import Modal from '../modal/modal';
 import ReviewWindow from '../review-window/review-window';
 import {CARD} from '../../const';
-import {SLIDER_LENGTH} from '../../const';
 
 const MainPage = () => {
   const [pageData, setPageData] = useState(CARD);
   const [isModalShow, setIsModalShow] = useState(false);
 
-  const onModalShowChange = (isShow) => {
-    document.body.style.overflow = isShow ? `hidden` : `auto`;
+  const handleCloseButtonClick = (isShow) => {
+    document.body.style.overflow = isShow ? `hidden` : `unset`;
+    document.body.style.paddingRight = isShow ? `16px` : `0`;
     setIsModalShow(isShow);
   };
 
-  const addComment = (comment) => {
+  const handleSendButtonClick = (comment) => {
     setPageData({
       ...pageData,
-      reviews: [...pageData.reviews.slice(), comment],
+      reviews: [...pageData.reviews, comment],
     });
-    onModalShowChange(false);
+    handleCloseButtonClick(false);
   };
 
   return (
@@ -33,16 +33,16 @@ const MainPage = () => {
       <main>
         <div className="page-main__wrapper container">
           <h1 className="visually-hidden">Автомобили</h1>
-          <Slider photos={pageData.photos.slice(0, SLIDER_LENGTH)} />
+          <Slider />
           <Card card={pageData} />
-          <Tabs card={pageData} onNewCommentButtonClick={onModalShowChange} />
+          <Tabs card={pageData} onNewCommentButtonClick={handleCloseButtonClick} />
         </div>
       </main>
       <Footer />
 
-      <Modal isShow={isModalShow} onClose={onModalShowChange}>
+      <Modal isShow={isModalShow} onClose={handleCloseButtonClick}>
         {(isShow) => (
-          <ReviewWindow onSendButtonClick={addComment} onCloseClick={onModalShowChange} isShow={isShow} />
+          <ReviewWindow onSendButtonClick={handleSendButtonClick} onCloseClick={handleCloseButtonClick} isShow={isShow} />
         )}
       </Modal>
     </div>
