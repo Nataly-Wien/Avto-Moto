@@ -7,9 +7,9 @@ const TabFeatures = ({features}) => {
     <div className="tabs__features tabs-features">
       <h2 className="visually-hidden">Характеристики</h2>
       <ul className="tabs-features__list">
-        {features.map((item, i) => {
+        {features.map((item) => {
           return (
-            <li className="tabs-features__item" key={`${item}-${i}`}>
+            <li className="tabs-features__item" key={`${item.feature}`}>
               <p className="tabs-features__feature">{item.feature}</p>
               <p className="tabs-features__value">{item.description}</p>
             </li>);

@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 const Menu = ({menu, type}) => {
   return (
     <ul className={`menu menu--${type}`}>
-      {menu.map((item, i) => {
+      {menu.map((item) => {
         return (
-          <li className={`menu__item menu__item menu__item--${type}`} key={`${item}-${type}-${i}`}>
+          <li className={`menu__item menu__item menu__item--${type}`} key={`${item}-${type}`}>
             <a className="menu__link" href="#">{item}</a>
           </li>
         );

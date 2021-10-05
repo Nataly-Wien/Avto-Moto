@@ -10,9 +10,9 @@ const Reviews = ({reviews, onNewCommentButtonClick}) => {
       <h2 className="visually-hidden">Отзывы</h2>
       <button className="reviews__button button button--white" type="button" onClick={() => onNewCommentButtonClick(true)}>Оставить отзыв</button>
       <ul className="reviews__list">
-        {reviews.map((item, i) => {
+        {reviews.map((item) => {
           return (
-            <li className="reviews__item" key={`review-${i}`}>
+            <li className="reviews__item" key={`review-${item.dateTime}`}>
               <Mention mention={item} />
             </li>
           );

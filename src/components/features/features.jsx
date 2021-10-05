@@ -7,7 +7,7 @@ const Features = ({features, featureNames}) => {
     <ul className="card__features features">
       {features.map((item, i) => {
         return (
-          <li className={`features__item features__item--${featureNames[i].feature}`} key={`${item}-${i}`}>
+          <li className={`features__item features__item--${featureNames[i].feature}`} key={`${item}`}>
             <span className="visually-hidden">{featureNames[i].legend}</span>
             {item}
           </li>

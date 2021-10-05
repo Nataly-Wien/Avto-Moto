@@ -11,7 +11,7 @@ const TabControls = ({currentTab, onTabClick, children}) => {
       <ul className="tabs__controls tabs-controls">
         {TABS.map((item, i) => {
           return (
-            <li className="tabs-controls__item" key={`${item}-${i}`}>
+            <li className="tabs-controls__item" key={`${item}`}>
               <button className={`tabs-controls__button${i === currentTab ? ` tabs-controls__button--current`
                 : ``}`} type="button" onClick={() => onTabClick(i)}>
                 {item}

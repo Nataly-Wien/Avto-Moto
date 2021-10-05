@@ -21,9 +21,9 @@ const Contacts = () => {
   return (
     <div className="tabs__contacts contacts">
       <ul className="contacts__list">
-        {CONTACTS.map((item, i) => {
+        {CONTACTS.map((item) => {
           return (
-            <li className="contacts__item" key={`contact-${i}`}>
+            <li className="contacts__item" key={`contact-${item.contact}`}>
               <p className="contacts__name">{item.contact}</p>
               {checkLink(item.description)}
             </li>);

@@ -6,7 +6,7 @@ const Pictures = ({photos, currentSlide}) => {
   return (
     <ul className="slider-controls__pictures pictures">
       {photos.map((item, i) => {
-        return (<li className="pictures__item" key={`photo-${i}`}>
+        return (<li className="pictures__item" key={`slide-${item.default}`}>
           <img className={`pictures__img-small${i === currentSlide ? ` pictures__img-small--active` : ``}`} src={item.default} width="128" height="80" alt={`Слайд ${i}`} />
         </li>);
       })}
