@@ -13,17 +13,6 @@ const EMPTY_INPUTS = {
 };
 
 const ReviewForm = ({isShow, onSendButtonClick}) => {
-
-  const getFromLocalStorage = () => {
-    let data = {};
-    Object.keys(EMPTY_INPUTS).map((item) => {
-      const field = localStorage.getItem(item) || EMPTY_INPUTS[item];
-      data = {...data, [item]: field};
-    });
-
-    return data;
-  };
-
   const saveToLocalStorage = (data) => {
     Object.keys(data).map((item) => {
       localStorage.setItem(item, data[item]);
@@ -54,7 +43,7 @@ const ReviewForm = ({isShow, onSendButtonClick}) => {
   const nameInput = useRef();
 
   useEffect(() => {
-    setInputs(getFromLocalStorage());
+    setInputs(EMPTY_INPUTS);
 
     if (nameInput.current) {
       nameInput.current.focus();

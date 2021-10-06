@@ -3,8 +3,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {TABS} from '../../const';
 
-import { } from '../../const';
-
 const TabControls = ({currentTab, onTabClick, children}) => {
   return (
     <div>

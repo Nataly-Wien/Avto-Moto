@@ -13,7 +13,7 @@ const MainPage = () => {
   const [pageData, setPageData] = useState(CARD);
   const [isModalShow, setIsModalShow] = useState(false);
 
-  const handleCloseButtonClick = (isShow) => {
+  const handleModalOpenClose = (isShow) => {
     document.body.style.overflow = isShow ? `hidden` : `unset`;
     document.body.style.paddingRight = isShow ? `16px` : `0`;
     setIsModalShow(isShow);
@@ -24,7 +24,8 @@ const MainPage = () => {
       ...pageData,
       reviews: [...pageData.reviews, comment],
     });
-    handleCloseButtonClick(false);
+
+    handleModalOpenClose(false);
   };
 
   return (
@@ -35,14 +36,14 @@ const MainPage = () => {
           <h1 className="visually-hidden">Автомобили</h1>
           <Slider />
           <Card card={pageData} />
-          <Tabs card={pageData} onNewCommentButtonClick={handleCloseButtonClick} />
+          <Tabs card={pageData} onNewCommentButtonClick={handleModalOpenClose} />
         </div>
       </main>
       <Footer />
 
-      <Modal isShow={isModalShow} onClose={handleCloseButtonClick}>
+      <Modal isShow={isModalShow} onClose={handleModalOpenClose}>
         {(isShow) => (
-          <ReviewWindow onSendButtonClick={handleSendButtonClick} onCloseClick={handleCloseButtonClick} isShow={isShow} />
+          <ReviewWindow onSendButtonClick={handleSendButtonClick} onCloseClick={handleModalOpenClose} isShow={isShow} />
         )}
       </Modal>
     </div>
