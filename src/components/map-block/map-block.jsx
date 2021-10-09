@@ -1,6 +1,7 @@
 import './map-block.scss';
 import React from "react";
 import {YMaps, Map, Placemark} from 'react-yandex-maps';
+import pin from './../../img/location.svg';
 
 const MapBlock = () => {
   const mapData = {
@@ -11,7 +12,7 @@ const MapBlock = () => {
   const pinCoordinate = [59.9689, 30.316272];
   const pinOptions = {
     iconLayout: `default#image`,
-    iconImageHref: `img/location.svg`,
+    iconImageHref: pin,
     iconImageSize: [34, 42],
     iconImageOffset: [0, -42],
   };

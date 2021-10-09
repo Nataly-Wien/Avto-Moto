@@ -13,8 +13,9 @@
 
 .header__logo {
   display: block;
+  flex-shrink: 0;
+  align-self: center;
   padding-left: 7px;
-  padding-right: 58px;
 
   &--mainPage {
     cursor: default;
