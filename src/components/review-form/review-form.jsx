@@ -34,6 +34,8 @@ const ReviewForm = ({isShow, onSendButtonClick}) => {
 
   const handleInputChange = (evt, fieldName) => setInputs(getNewInputValues(fieldName, evt.target.value));
 
+  const handleRatingChange = (rating) => setInputs(getNewInputValues(`rating`, rating));
+
   const handleFormSubmit = (evt) => {
     evt.preventDefault();
     setIsExitWithSaving(true);
@@ -52,7 +54,6 @@ const ReviewForm = ({isShow, onSendButtonClick}) => {
     if (isExitWithSaving) {
       saveToLocalStorage(inputs);
     }
-
   }, [isExitWithSaving, isShow]);
 
   return (
@@ -78,7 +79,7 @@ const ReviewForm = ({isShow, onSendButtonClick}) => {
         <div className="review-form__right-wrapper">
           <div className="review-form__rating">
             <p className="review-form__rating-label">Оцените товар:</p>
-            <RatingInput rating={inputs.rating.toString()} onChange={(evt) => handleInputChange(evt, `rating`)} />
+            <RatingInput rating={inputs.rating.toString()} onRatingChange={handleRatingChange} key={isShow} />
           </div>
           <p className="review-form__input-wrapper review-form__input-wrapper--asterisk">
             <label className="visually-hidden" htmlFor="comment-field">Ваш комментарий</label>
