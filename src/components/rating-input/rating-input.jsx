@@ -46,7 +46,6 @@ const RatingList = ({onRatingChange, rating}) => {
             <span className="visually-hidden">{`${item}`}</span>
             <svg width="27" height="25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m13.569 0 3.046 9.523h9.858l-7.975 5.885 3.046 9.523-7.975-5.885-7.976 5.885 3.047-9.523L.664 9.523h9.858L13.57 0Z" fill="#BDBEC2" fillOpacity=".7" /></svg>
           </label>
-
         </React.Fragment>;
       })}
     </div>

@@ -7,6 +7,7 @@
   display: flex;
   justify-content: stretch;
   width: 50%;
+  min-width: max-content;
 }
 
 .tabs-controls__item {
@@ -18,6 +19,7 @@
 
   display: block;
   width: 100%;
+  min-width: 185px;
   padding: 12px;
   color: $dark;
   background-color: $white;

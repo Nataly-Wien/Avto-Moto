@@ -2,7 +2,8 @@
 @import "../../sass/variables.scss";
 
 .tabs-features {
-  width: 50%
+  width: 50%;
+  min-width: 555px;
 }
 
 .tabs-features__list {
@@ -12,10 +13,9 @@
 }
 
 .tabs-features__item {
-  @include font(400, 16px, 22px);
-
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   padding-bottom: 6px;
   margin-bottom: 21px;
   border-bottom: 1px solid $stroke;
@@ -23,10 +23,15 @@
 
 .tabs-features__feature {
   @include reset-indent;
+  @include font(400, 16px, 22px);
+
+  max-width: 49%;
 }
 
 .tabs-features__value {
   @include reset-indent;
+  @include font(400, 16px, 22px);
 
+  max-width: 49%;
   color: $black;
 }

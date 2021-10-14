@@ -12,15 +12,18 @@ const EMPTY_INPUTS = {
   comment: ``,
 };
 
-const ReviewForm = ({isShow, onSendButtonClick}) => {
+const ReviewForm = ({isShow, onSendButtonClick, onCloseClick}) => {
+
+  const [inputs, setInputs] = useState(EMPTY_INPUTS);
+  const [isExitWithSaving, setIsExitWithSaving] = useState(false);
+
+
   const saveToLocalStorage = (data) => {
-    Object.keys(data).map((item) => {
+    Object.keys(data).forEach((item) => {
       localStorage.setItem(item, data[item]);
     });
   };
 
-  const [inputs, setInputs] = useState(EMPTY_INPUTS);
-  const [isExitWithSaving, setIsExitWithSaving] = useState(false);
 
   const getNewInputValues = (name, value) => {
     const newState = {
@@ -32,17 +35,46 @@ const ReviewForm = ({isShow, onSendButtonClick}) => {
     return newState;
   };
 
+
   const handleInputChange = (evt, fieldName) => setInputs(getNewInputValues(fieldName, evt.target.value));
+
 
   const handleRatingChange = (rating) => setInputs(getNewInputValues(`rating`, rating));
 
+
   const handleFormSubmit = (evt) => {
     evt.preventDefault();
+
+    if (!inputs.name.trim()) {
+      setInputs(getNewInputValues(`name`, ``));
+      return;
+    }
+
+    if (!inputs.comment.trim()) {
+      setInputs(getNewInputValues(`comment`, ``));
+      return;
+    }
+
     setIsExitWithSaving(true);
     onSendButtonClick({...inputs, dateTime: dayjs().toISOString()});
   };
 
+
+  const handleKeydown = (evt) => {
+    if (evt.key === 'Tab' && !evt.shiftKey && evt.target.closest(`.review-form__close-btn`)) {
+      evt.preventDefault();
+      nameInput.current.focus();
+    }
+
+    if (evt.key === 'Tab' && evt.shiftKey && evt.target.closest(`.review-form__control--input-name`)) {
+      evt.preventDefault();
+      closeBtn.current.focus();
+    }
+  };
+
+
   const nameInput = useRef();
+  const closeBtn = useRef();
 
   useEffect(() => {
     setInputs(EMPTY_INPUTS);
@@ -57,7 +89,7 @@ const ReviewForm = ({isShow, onSendButtonClick}) => {
   }, [isExitWithSaving, isShow]);
 
   return (
-    <form className="review__form review-form" action="https://echo.htmlacademy.ru/" method="post" name="review" onSubmit={handleFormSubmit}>
+    <form className="review__form review-form" action="https://echo.htmlacademy.ru/" method="post" name="review" onKeyDown={handleKeydown} onSubmit={handleFormSubmit}>
       <div className="review-form__wrapper">
         <div>
           <p className="review-form__input-wrapper review-form__input-wrapper--asterisk review-form__input-wrapper--name">
@@ -88,7 +120,9 @@ const ReviewForm = ({isShow, onSendButtonClick}) => {
         </div>
       </div>
       <button className="review-form__send-btn button button--red" type="submit">Оставить отзыв</button>
-
+      <button className="review-form__close-btn" type="button" onClick={() => onCloseClick(false)} ref={closeBtn}>
+        <span className="visually-hidden">Закрыть</span>
+      </button>
     </form>
   );
 };
@@ -96,6 +130,7 @@ const ReviewForm = ({isShow, onSendButtonClick}) => {
 ReviewForm.propTypes = {
   isShow: PropTypes.bool.isRequired,
   onSendButtonClick: PropTypes.func.isRequired,
+  onCloseClick: PropTypes.func.isRequired,
 };
 
 export default ReviewForm;

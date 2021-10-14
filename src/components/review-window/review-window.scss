@@ -2,57 +2,11 @@
 @import "../../sass/mixins.scss";
 
 .review {
-  position: relative;
   min-width: 698px;
   min-height: 415px;
   background-color: $background-grey;
   padding: 35px;
   padding-top: 30px;
-}
-
-.review__close-btn {
-  position: absolute;
-  right: 15px;
-  top: 16px;
-  width: 30px;
-  height: 30px;
-  background-color: transparent;
-  border: none;
-  outline: none;
-
-  &::before,
-  &::after {
-    @include pseudo;
-
-    left: 5px;
-    top: 14px;
-    width: 20px;
-    height: 2px;
-    background-color: #9F9E9E;
-  }
-
-  &::before {
-    transform: rotate(45deg);
-  }
-
-  &::after {
-    transform: rotate(-45deg);
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    outline: 1px solid $strike;
-  }
-
-  &:hover::before,
-  &:focus::before,
-  &:active::before,
-  &:hover::after,
-  &:focus::after,
-  &:active::after {
-    background-color: $dark;
-  }
 }
 
 .review__header {

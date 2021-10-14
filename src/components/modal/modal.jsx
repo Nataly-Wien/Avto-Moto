@@ -19,10 +19,6 @@ const Modal = ({isShow, onClose, children}) => {
   const handleKeydown = (evt) => {
     if (evt.key === `Escape`) {
       handleEscDown(true);
-    } else if (evt.key === 'Tab' && !evt.shiftKey && evt.target.closest(`.review__close-btn`)) {
-      evt.preventDefault();
-    } else if (evt.key === 'Tab' && evt.shiftKey && evt.target.closest(`.review-form__control--input-name`)) {
-      evt.preventDefault();
     }
   };
 
