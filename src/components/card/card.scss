@@ -1,4 +1,15 @@
 @import "../../sass/mixins.scss";
+@import "../../sass/variables.scss";
+
+.card {
+  @media (max-width: $desktop-width - 1) {
+    padding-top: 60px;
+  }
+
+  @media (max-width: $tablet-width - 1) {
+    padding-top: 20px;
+  }
+}
 
 .card__name {
   @include reset-indent;
@@ -6,16 +17,30 @@
 
   margin-left: 8px;
   padding-bottom: 20px;
+  letter-spacing: 1px;
+
+  @media (max-width: $desktop-width - 1) {
+    margin-left: 0;
+    padding-bottom: 15px;
+    letter-spacing: 0;
+  }
 }
 
 .card__wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 5px
+  margin-top: 5px;
+
+  @media (min-width: $tablet-width) and (max-width: $desktop-width - 1) {
+    flex-direction: row;
+  }
 }
 
 .card__button {
-  margin-left: 4px;
-  margin-bottom: 16px;
+  margin: 0 30px 16px 4px;
+
+  @media (min-width: $tablet-width) and (max-width: $desktop-width - 1) {
+    margin-left: 0;
+  }
 }

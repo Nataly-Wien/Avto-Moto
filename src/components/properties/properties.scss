@@ -4,7 +4,11 @@
 .properties {
   @include list;
   padding-left: 20px;
-  width: 75%
+  width: 75%;
+
+  @media (max-width: $desktop-width - 1) {
+    display: none;
+  }
 }
 
 .properties__name {

@@ -1,6 +1,36 @@
+@import "../../sass/variables.scss";
 .map {
   width: 431px;
   height: 271px;
   margin-top: 5px;
   background-image: url('../../img/map.jpg');
+
+  @media (max-width: $desktop-width - 1) {
+    width: 283px;
+    height: 283px;
+    margin-top: 0;
+    align-self: center;
+    background-position: 25% 75%;
+    background-size: cover;
+  }
+
+  @media (max-width: $tablet-width - 1) {
+    width: 288x;
+    height: 288x;
+  }
+}
+
+.map__map {
+  width: 431px;
+  height: 271px;
+
+  @media (max-width: $desktop-width - 1) {
+    width: 283px;
+    height: 283px;
+  }
+
+  @media (max-width: $tablet-width - 1) {
+    width: 288x;
+    height: 288x;
+  }
 }

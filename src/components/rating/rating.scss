@@ -4,6 +4,10 @@
 .rating {
   padding-top: 20px;
   display: flex;
+
+  @media (max-width: $desktop-width - 1) {
+    padding-top: 11px;
+  }
 }
 
 .rating__stars-list {

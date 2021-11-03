@@ -11,6 +11,10 @@
   border: none;
   outline: none;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &--red {
     background-color: $wine-red;
     color: $white;

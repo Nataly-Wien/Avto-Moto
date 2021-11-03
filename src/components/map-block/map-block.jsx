@@ -18,11 +18,13 @@ const MapBlock = () => {
   };
 
   return (
-    <YMaps>
-      <Map className="contacts__map map" defaultState={mapData}>
-        <Placemark geometry={pinCoordinate} options={pinOptions} />
-      </Map>
-    </YMaps>
+    <div className="contacts__map map">
+      <YMaps>
+        <Map className="map__map" defaultState={mapData}>
+          <Placemark geometry={pinCoordinate} options={pinOptions} />
+        </Map>
+      </YMaps>
+    </div>
   );
 };
 

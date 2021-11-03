@@ -1,17 +1,30 @@
 @import "../../sass/variables.scss";
 @import "../../sass/mixins.scss";
 
-.tabs-controls {
+.tabs__controls {
+  position: relative;
+
+  @media (max-width: $desktop-width - 1) {
+    padding-top: 53px;
+  }
+}
+
+.tabs-controls__list {
   @include list;
 
   display: flex;
   justify-content: stretch;
   width: 50%;
-  min-width: max-content;
+
+  @media (max-width: $desktop-width - 1) {
+    position: absolute;
+    top: 0;
+  }
 }
 
 .tabs-controls__item {
   flex-basis: 33.3%;
+  min-width: 195px;
 }
 
 .tabs-controls__button {
@@ -19,7 +32,6 @@
 
   display: block;
   width: 100%;
-  min-width: 185px;
   padding: 12px;
   color: $dark;
   background-color: $white;

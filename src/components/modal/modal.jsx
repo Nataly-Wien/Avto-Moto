@@ -13,18 +13,15 @@ const Modal = ({isShow, onClose, children}) => {
     };
   });
 
-  const handleEscDown = (isDown) => onClose(!isDown);
-  const handlePopupOutClick = (isClick) => onClose(!isClick);
-
   const handleKeydown = (evt) => {
     if (evt.key === `Escape`) {
-      handleEscDown(true);
+      onClose(false);
     }
   };
 
   const handleMouseDown = (evt) => {
     if (!evt.target.closest(`.review`)) {
-      handlePopupOutClick(true);
+      onClose(false);
     }
   };
 

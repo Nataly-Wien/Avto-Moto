@@ -7,6 +7,18 @@
   padding-top: 35px;
   margin-left: 8px;
   margin-bottom: 40px;
+
+  @media (max-width: $desktop-width - 1) {
+    padding-top: 28px;
+    margin-bottom: 32px;
+    margin-left: 0;
+    align-items: center;
+  }
+
+  @media (max-width: $tablet-width - 1) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .price__discount {
@@ -30,5 +42,13 @@
     left: -2px;
     rotate: -5deg;
     background-color: $strike;
+  }
+
+  @media (max-width: $desktop-width - 1) {
+    margin-left: 35px;
+  }
+
+  @media (max-width: $tablet-width - 1) {
+    margin-left: 0;
   }
 }

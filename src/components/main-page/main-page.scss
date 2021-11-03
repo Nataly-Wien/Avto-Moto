@@ -6,7 +6,6 @@
 
   display: grid;
   grid-template-rows: min-content 1fr min-content;
-  min-width: $desktop-width;
   min-height: 100%;
   font-family: 'Open Sans', Arial, sans-serif;
   color: $dark;
@@ -18,6 +17,16 @@
   grid-template-columns: 51% 45%;
   column-gap: 4%;
   padding-top: 74px;
+
+  @media (max-width: $desktop-width - 1) {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+  }
+
+  @media (max-width: $tablet-width - 1) {
+    padding-top: 4px;
+  }
 }
 
 .page-main__tabs {

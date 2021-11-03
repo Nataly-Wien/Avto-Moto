@@ -8,9 +8,28 @@
   justify-content: flex-end;
   flex-wrap: wrap;
 
+  &--header {
+    @media (max-width: $desktop-width - 1) {
+      position: absolute;
+      z-index: 4;
+      right: -20px;
+      top: 0;
+      width: 150%;
+      flex-direction: column;
+      align-items: flex-end;
+      padding-top: 10px;
+      padding-bottom: 20px;
+      background-color: $background-grey;
+    }
+  }
+
   &--footer {
     justify-content: flex-start;
     padding-left: 4px;
+
+    @media (max-width: $desktop-width - 1) {
+      margin-left: -10px;
+    }
   }
 }
 
@@ -21,6 +40,12 @@
   margin-left: 58px;
   padding: 0;
 
+  &--header {
+    @media (max-width: $desktop-width - 1) {
+      padding-right: 30px;
+    }
+  }
+
   &--footer {
     margin-left: 0;
     margin-right: 4.75%;
@@ -28,12 +53,17 @@
     &:last-child {
       margin-right: 0;
     }
+
+    @media (max-width: $desktop-width - 1) {
+      flex-basis: 33.3%;
+      margin-right: 0;
+    }
   }
 }
 
 .menu__link {
   display: block;
-  padding: 15px 5px;
+  padding: 10px 5px;
   color: $dark;
 
   &:hover,

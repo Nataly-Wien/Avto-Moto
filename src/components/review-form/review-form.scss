@@ -128,9 +128,11 @@
     transform: rotate(-45deg);
   }
 
-  &:hover,
-  &:focus,
-  &:active {
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus {
     outline: 1px solid $strike;
   }
 

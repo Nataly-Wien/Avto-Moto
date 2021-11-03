@@ -8,29 +8,37 @@ import Footer from '../footer/footer';
 import Modal from '../modal/modal';
 import ReviewWindow from '../review-window/review-window';
 import {CARD} from '../../const';
+import {useScrollBlock} from '../../hooks/use-scroll-block';
 
 const MainPage = () => {
   const [pageData, setPageData] = useState(CARD);
   const [isModalShow, setIsModalShow] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const [blockScroll, allowScroll] = useScrollBlock();
 
   const handleModalOpenClose = (isShow) => {
-    document.body.style.overflow = isShow ? `hidden` : `unset`;
-    document.body.style.paddingRight = isShow ? `16px` : `0`;
+    isShow ? blockScroll() : allowScroll();
     setIsModalShow(isShow);
   };
 
+  const handleMobileMenuClose = (isOpen) => {
+    setIsMobileMenuOpen(isOpen);
+    isOpen ? blockScroll() : allowScroll();
+  };
+
   const handleSendButtonClick = (comment) => {
-    setPageData({
-      ...pageData,
-      reviews: [...pageData.reviews, comment],
-    });
+    setPageData((prev) => ({
+      ...prev,
+      reviews: [...prev.reviews, comment],
+    }));
 
     handleModalOpenClose(false);
   };
 
   return (
     <div className="page-main">
-      <Header />
+      <Header isMenuOpen={isMobileMenuOpen} onMenuButtonClick={handleMobileMenuClose} />
       <main>
         <div className="page-main__wrapper container">
           <h1 className="visually-hidden">Автомобили</h1>

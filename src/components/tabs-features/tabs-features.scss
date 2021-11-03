@@ -4,12 +4,20 @@
 .tabs-features {
   width: 50%;
   min-width: 555px;
+
+  @media (max-width: $desktop-width - 1) {
+    width: 100%;
+  }
 }
 
 .tabs-features__list {
   @include list;
 
   margin: 30px 20px 0 0;
+
+  @media (max-width: $desktop-width - 1) {
+    margin: 48px 0 50px 0;
+  }
 }
 
 .tabs-features__item {
@@ -19,6 +27,10 @@
   padding-bottom: 6px;
   margin-bottom: 21px;
   border-bottom: 1px solid $stroke;
+
+  @media (max-width: $desktop-width - 1) {
+    padding-top: 5px;
+  }
 }
 
 .tabs-features__feature {
@@ -26,6 +38,10 @@
   @include font(400, 16px, 22px);
 
   max-width: 49%;
+
+  @media (max-width: $desktop-width - 1) {
+    @include font(400, 16px, 20px);
+  }
 }
 
 .tabs-features__value {
@@ -34,4 +50,8 @@
 
   max-width: 49%;
   color: $black;
+
+  @media (max-width: $desktop-width - 1) {
+    @include font(400, 16px, 20px);
+  }
 }

@@ -1,3 +1,10 @@
+@import "../../sass/variables.scss";
+@import "../../sass/mixins.scss";
+
 .tabs {
   margin: 89px 0 120px 6px;
+
+  @media (max-width: $desktop-width - 1) {
+    margin: 11px 0 48px 0;
+  }
 }

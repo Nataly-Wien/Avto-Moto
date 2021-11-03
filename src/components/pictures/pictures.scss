@@ -9,6 +9,11 @@
   align-items: center;
   margin-left: 10px;
   margin-right: 10px;
+
+  @media (max-width: $desktop-width - 1) {
+    margin-left: 31px;
+    margin-right: 31px;
+  }
 }
 
 .pictures__item {
@@ -21,6 +26,7 @@
 
 .pictures__img-small {
   display: block;
+  object-fit: cover;
   background-color: $dark;
 
   &--active {

@@ -5,8 +5,8 @@ import {TABS} from '../../const';
 
 const TabControls = ({currentTab, onTabClick, children}) => {
   return (
-    <div>
-      <ul className="tabs__controls tabs-controls">
+    <div className="tabs__controls tabs-controls">
+      <ul className="tabs-controls__list">
         {TABS.map((item, i) => {
           return (
             <li className="tabs-controls__item" key={`${item}`}>

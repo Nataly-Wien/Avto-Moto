@@ -73,8 +73,8 @@ const ReviewForm = ({isShow, onSendButtonClick, onCloseClick}) => {
   };
 
 
-  const nameInput = useRef();
-  const closeBtn = useRef();
+  const nameInput = useRef(null);
+  const closeBtn = useRef(null);
 
   useEffect(() => {
     setInputs(EMPTY_INPUTS);

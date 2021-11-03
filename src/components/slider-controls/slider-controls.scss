@@ -1,6 +1,18 @@
+@import "../../sass/variables.scss";
+
 .slider-controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 35px;
+
+  @media (max-width: $desktop-width - 1) {
+    justify-content: center;
+    margin-left: 63px;
+    margin-right: 63px;
+  }
+
+  @media (max-width: 640px) {
+    display: none;
+  }
 }

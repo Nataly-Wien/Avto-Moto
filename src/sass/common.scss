@@ -41,6 +41,16 @@ a {
     margin-right: auto;
     padding-left: 150px;
     padding-right: 150px;
+
+    @media (max-width: $desktop-width - 1) {
+      padding-left: 21px;
+      padding-right: 21px;
+    }
+
+    @media (max-width: $tablet-width - 1) {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
 }
 
 .root {

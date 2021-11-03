@@ -5,11 +5,20 @@
   @include reset-indent;
   @include font(600, 20px, 27px);
   width: 75%;
+
+  @media (max-width: $desktop-width - 1) {
+    @include font(600, 15px, 21px);
+    padding-top: 3px;
+  }
 }
 
 .mention__wrapper {
   padding-top: 10px;
   margin-bottom: 24px;
+
+  @media (max-width: $desktop-width - 1) {
+    padding-top: 13px;
+  }
 }
 
 .mention__time {

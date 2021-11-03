@@ -8,7 +8,14 @@
   width: 66%;
   padding-top: 25px;
   margin-bottom: 85px;
+
+  @media (max-width: $desktop-width - 1) {
+    grid-template-columns: 45% 50%;
+    column-gap: 5%;
+    width: 585px;
+  }
 }
+
 .contacts__list {
   @include list;
 
@@ -36,4 +43,8 @@
   margin-bottom: 23px;
   color: $black;
   white-space: pre-wrap;
+
+  @media (max-width: $desktop-width - 1) {
+      margin-bottom: 18px;
+  }
 }

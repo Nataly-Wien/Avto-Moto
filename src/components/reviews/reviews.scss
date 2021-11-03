@@ -1,15 +1,31 @@
 @import "../../sass/mixins.scss";
+@import "../../sass/variables.scss";
 
 .reviews {
   position: relative;
   padding-top: 28px;
   padding-bottom: 15px;
+
+  @media (max-width: $desktop-width - 1) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .reviews__button {
   position: absolute;
   right: 10px;
   padding: 16px 17px;
+
+  @media (max-width: $desktop-width - 1) {
+    position: static;
+    margin-bottom: 26px;
+  }
+
+  @media (max-width: $tablet-width - 1) {
+    align-self: center;
+  }
 }
 
 .reviews__list {
