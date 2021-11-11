@@ -1,47 +1,33 @@
 import {useRef} from 'react';
 
-const safeDocument = typeof document !== 'undefined' ? document : {};
+const originalOverflow = window.getComputedStyle(document.body).overflow;
+const originalPaddingRight = window.getComputedStyle(document.body).paddingRight;
+const scrollWidth = window.innerWidth - document.documentElement.clientWidth;
 
 export const useScrollBlock = () => {
   const scrollBlocked = useRef();
-  const html = safeDocument.documentElement;
-  const {body} = safeDocument;
 
   const blockScroll = () => {
-    if (!body || !body.style || scrollBlocked.current) return;
+    if (scrollBlocked.current) {
+      return
+    };
 
-    const scrollBarWidth = window.innerWidth - html.clientWidth;
-    const bodyPaddingRight =
-      parseInt(window.getComputedStyle(body).getPropertyValue("padding-right")) || 0;
-
-    html.style.position = 'relative';
-    html.style.overflow = 'hidden';
-    body.style.position = 'relative';
-    body.style.overflow = 'hidden';
-    body.style.paddingRight = `${bodyPaddingRight + scrollBarWidth}px`;
+    document.body.style.overflow = `hidden`;
+    document.body.style.paddingRight = `${parseInt(originalPaddingRight) + scrollWidth}px`;
 
     scrollBlocked.current = true;
   };
 
   const allowScroll = () => {
-    if (!body || !body.style || !scrollBlocked.current) return;
+    if (!scrollBlocked.current) {
+      return
+    };
 
-    html.style.position = '';
-    html.style.overflow = 'unset';
-    body.style.position = '';
-    body.style.overflow = 'unset';
-    body.style.paddingRight = '';
+    document.body.style.overflow = originalOverflow;
+    document.body.style.paddingRight = originalPaddingRight;
 
     scrollBlocked.current = false;
   };
 
   return [blockScroll, allowScroll];
 };
-
-// export const useScrollBlock = () => {
-//   useLayoutEffect(() => {
-//     const originalOverflow = window.getComputedStyle(document.body).overflow;
-//     document.body.style.overflow = "hidden";
-//     return () => (document.body.style.overflow = originalOverflow);
-//   }, []);
-// }

@@ -35,7 +35,6 @@ const Header = ({isMenuOpen, onMenuButtonClick}) => {
     }
   };
 
-
   return (
     <header className={`header${isMenuOpen ? ` overlay` : ``}`}>
       <nav className={`header__nav${isMenuOpen ? ` header__nav--mobile` : ``} container`} onKeyDown={handleKeyDown}>

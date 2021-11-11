@@ -31,6 +31,7 @@
     }
 
   &--mobile {
+    position: relative;
     display: block;
   }
 }
@@ -46,6 +47,10 @@
 
   @media (max-width: $desktop-width - 1) {
       padding-left: 0;
+    }
+
+  @media (max-width: $tablet-mobile-intermediate) {
+      margin-left: -6px;
     }
 }
 

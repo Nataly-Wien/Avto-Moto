@@ -1,13 +1,10 @@
 @import "../../sass/variables.scss";
 
 .modal {
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 30;
-}
-.show {
-  display: flex;
 }
 
 .overlay {

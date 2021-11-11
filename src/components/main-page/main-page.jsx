@@ -6,7 +6,7 @@ import Card from '../card/card';
 import Tabs from '../tabs/tabs';
 import Footer from '../footer/footer';
 import Modal from '../modal/modal';
-import ReviewWindow from '../review-window/review-window';
+import ReviewForm from '../review-form/review-form';
 import {CARD} from '../../const';
 import {useScrollBlock} from '../../hooks/use-scroll-block';
 
@@ -14,17 +14,15 @@ const MainPage = () => {
   const [pageData, setPageData] = useState(CARD);
   const [isModalShow, setIsModalShow] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   const [blockScroll, allowScroll] = useScrollBlock();
 
   const handleModalOpenClose = (isShow) => {
-    isShow ? blockScroll() : allowScroll();
     setIsModalShow(isShow);
   };
 
-  const handleMobileMenuClose = (isOpen) => {
-    setIsMobileMenuOpen(isOpen);
+  const handleMobileMenuOpenClose = (isOpen) => {
     isOpen ? blockScroll() : allowScroll();
+    setIsMobileMenuOpen(isOpen);
   };
 
   const handleSendButtonClick = (comment) => {
@@ -38,7 +36,7 @@ const MainPage = () => {
 
   return (
     <div className="page-main">
-      <Header isMenuOpen={isMobileMenuOpen} onMenuButtonClick={handleMobileMenuClose} />
+      <Header isMenuOpen={isMobileMenuOpen} onMenuButtonClick={handleMobileMenuOpenClose} />
       <main>
         <div className="page-main__wrapper container">
           <h1 className="visually-hidden">Автомобили</h1>
@@ -49,11 +47,9 @@ const MainPage = () => {
       </main>
       <Footer />
 
-      <Modal isShow={isModalShow} onClose={handleModalOpenClose}>
-        {(isShow) => (
-          <ReviewWindow onSendButtonClick={handleSendButtonClick} onCloseClick={handleModalOpenClose} isShow={isShow} />
-        )}
-      </Modal>
+      {isModalShow && (<Modal onClose={handleModalOpenClose}>
+        <ReviewForm onSendButtonClick={handleSendButtonClick} onCloseClick={handleModalOpenClose} />
+      </Modal>)}
     </div>
   );
 };

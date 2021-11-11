@@ -7,4 +7,9 @@
   @media (max-width: $desktop-width - 1) {
     margin: 11px 0 48px 0;
   }
+
+  @media (max-width: $tablet-width - 1) {
+    margin-top: 20px;
+    margin-bottom: 13px;
+  }
 }

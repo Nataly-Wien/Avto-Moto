@@ -12,7 +12,7 @@ const EMPTY_INPUTS = {
   comment: ``,
 };
 
-const ReviewForm = ({isShow, onSendButtonClick, onCloseClick}) => {
+const ReviewForm = ({onSendButtonClick, onCloseClick}) => {
 
   const [inputs, setInputs] = useState(EMPTY_INPUTS);
   const [isExitWithSaving, setIsExitWithSaving] = useState(false);
@@ -37,8 +37,6 @@ const ReviewForm = ({isShow, onSendButtonClick, onCloseClick}) => {
 
 
   const handleInputChange = (evt, fieldName) => setInputs(getNewInputValues(fieldName, evt.target.value));
-
-
   const handleRatingChange = (rating) => setInputs(getNewInputValues(`rating`, rating));
 
 
@@ -86,10 +84,11 @@ const ReviewForm = ({isShow, onSendButtonClick, onCloseClick}) => {
     if (isExitWithSaving) {
       saveToLocalStorage(inputs);
     }
-  }, [isExitWithSaving, isShow]);
+  }, [isExitWithSaving]);
 
   return (
-    <form className="review__form review-form" action="https://echo.htmlacademy.ru/" method="post" name="review" onKeyDown={handleKeydown} onSubmit={handleFormSubmit}>
+    <form className="review-form" action="https://echo.htmlacademy.ru/" method="post" name="review" onKeyDown={handleKeydown} onSubmit={handleFormSubmit}>
+      <h2 className="review-form__header">Оставить отзыв</h2>
       <div className="review-form__wrapper">
         <div>
           <p className="review-form__input-wrapper review-form__input-wrapper--asterisk review-form__input-wrapper--name">
@@ -109,14 +108,14 @@ const ReviewForm = ({isShow, onSendButtonClick, onCloseClick}) => {
           </p>
         </div>
         <div className="review-form__right-wrapper">
-          <div className="review-form__rating">
-            <p className="review-form__rating-label">Оцените товар:</p>
-            <RatingInput rating={inputs.rating.toString()} onRatingChange={handleRatingChange} key={isShow} />
-          </div>
           <p className="review-form__input-wrapper review-form__input-wrapper--asterisk">
             <label className="visually-hidden" htmlFor="comment-field">Ваш комментарий</label>
             <textarea className="review-form__control review-form__control--textarea" name="comment" id="comment-field" cols="28" rows="5" value={inputs.comment} placeholder="Комментарий" onChange={(evt) => handleInputChange(evt, `comment`)} required={true}></textarea>
           </p>
+          <div className="review-form__rating">
+            <p className="review-form__rating-label">Оцените товар:</p>
+            <RatingInput rating={inputs.rating.toString()} onRatingChange={handleRatingChange} />
+          </div>
         </div>
       </div>
       <button className="review-form__send-btn button button--red" type="submit">Оставить отзыв</button>
@@ -128,7 +127,6 @@ const ReviewForm = ({isShow, onSendButtonClick, onCloseClick}) => {
 };
 
 ReviewForm.propTypes = {
-  isShow: PropTypes.bool.isRequired,
   onSendButtonClick: PropTypes.func.isRequired,
   onCloseClick: PropTypes.func.isRequired,
 };

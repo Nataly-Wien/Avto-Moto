@@ -23,7 +23,7 @@ const Contacts = () => {
       <ul className="contacts__list">
         {CONTACTS.map((item) => {
           return (
-            <li className="contacts__item" key={`contact-${item.contact}`}>
+            <li className={`contacts__item${item.visible ? `` : `contacts__item--mobile-hidden`}`} key={`contact-${item.contact}`}>
               <p className="contacts__name">{item.contact}</p>
               {checkLink(item.description)}
             </li>);

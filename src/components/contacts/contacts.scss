@@ -13,16 +13,39 @@
     grid-template-columns: 45% 50%;
     column-gap: 5%;
     width: 585px;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: $tablet-width - 1) {
+    padding-top: 20px;
+  }
+
+  @media (max-width: $tablet-mobile-intermediate) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 }
 
 .contacts__list {
   @include list;
 
+  @media (max-width: $tablet-width - 1) {
+    margin-bottom: 11px;
+  }
+
   a {
     &:hover,
     &:active {
       color: $dark;
+    }
+  }
+}
+
+.contacts__item {
+  @media (max-width: $tablet-mobile-intermediate) {
+    &--mobile-hidden {
+      display: none;
     }
   }
 }
@@ -45,6 +68,11 @@
   white-space: pre-wrap;
 
   @media (max-width: $desktop-width - 1) {
-      margin-bottom: 18px;
+    margin-bottom: 18px;
+  }
+
+  @media (max-width: $desktop-width - 1) {
+    padding-top: 4px;
+    margin-bottom: 10px;
   }
 }

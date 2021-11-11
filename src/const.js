@@ -53,7 +53,7 @@ export const CARD = {
       description: `2.4`,
     },
     {
-      feature: `Макс. крутящий момент`,
+      feature: `Макс. крутящий момент, Нм / об/мин`,
       description: `370/4500`,
     },
     {
@@ -85,18 +85,22 @@ export const CONTACTS = [
   {
     contact: `Адрес`,
     description: `${`Санкт-Петербург,`}\n${`набережная реки Карповки, дом 5`}`,
+    visible: true,
   },
   {
     contact: `Режим работы`,
     description: `Ежедневно, с 10:00 до 21:00`,
+    visible: false,
   },
   {
     contact: `Телефон`,
     description: `8 (800) 333-55-99`,
+    visible: true,
   },
   {
     contact: `E-mail`,
     description: `info@avto-moto.ru`,
+    visible: false,
   },
 ];
 

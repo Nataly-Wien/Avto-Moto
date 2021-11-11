@@ -30,6 +30,11 @@
     @media (max-width: $desktop-width - 1) {
       margin-left: -10px;
     }
+
+    @media (max-width: $tablet-mobile-intermediate) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 }
 
@@ -58,6 +63,10 @@
       flex-basis: 33.3%;
       margin-right: 0;
     }
+
+    @media (max-width: $tablet-width - 1) {
+      flex-basis: 50%;
+    }
   }
 }
 
@@ -69,5 +78,9 @@
   &:hover,
   &:active {
     color: $dark-transparent;
+  }
+
+  @media (max-width: $tablet-width - 1) {
+    padding: 8px 5px 7px 8px;
   }
 }

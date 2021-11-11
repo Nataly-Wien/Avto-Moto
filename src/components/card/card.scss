@@ -7,7 +7,7 @@
   }
 
   @media (max-width: $tablet-width - 1) {
-    padding-top: 20px;
+    padding-top: 15px;
   }
 }
 
@@ -40,7 +40,7 @@
 .card__button {
   margin: 0 30px 16px 4px;
 
-  @media (min-width: $tablet-width) and (max-width: $desktop-width - 1) {
+  @media (max-width: $desktop-width - 1) {
     margin-left: 0;
   }
 }

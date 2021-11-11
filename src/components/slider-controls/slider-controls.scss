@@ -12,7 +12,7 @@
     margin-right: 63px;
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: $tablet-mobile-intermediate) {
     display: none;
   }
 }
